@@ -16,4 +16,5 @@ public class AllowedIpEntity {
     private String ip;
     private String address;
     private String createTime;
+    private String comment;
 }
