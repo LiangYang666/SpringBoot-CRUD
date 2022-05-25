@@ -1,5 +1,6 @@
 package com.liang.web.entity;
 
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 import lombok.ToString;
@@ -12,7 +13,8 @@ import lombok.ToString;
 @Data
 @ToString
 @TableName("allowed_ip")
-public class AllowedIpEntity {
+public class IpEntity {
+    @TableId
     private String ip;
     private String address;
     private String createTime;

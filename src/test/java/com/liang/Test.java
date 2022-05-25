@@ -1,8 +1,7 @@
 package com.liang;
 
-import com.liang.web.dao.AllowedIPDao;
-import com.liang.web.entity.AllowedIpEntity;
-import org.mybatis.spring.annotation.MapperScan;
+import com.liang.web.dao.IpDao;
+import com.liang.web.entity.IpEntity;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -17,11 +16,11 @@ import java.util.List;
 public class Test {
 
     @Autowired
-    private AllowedIPDao allowedIPDao;
+    private IpDao ipDao;
 
     @org.junit.jupiter.api.Test
     public void test(){
-        List<AllowedIpEntity> allowedIpEntities = allowedIPDao.selectList(null);
+        List<IpEntity> allowedIpEntities = ipDao.selectList(null);
         System.out.println(allowedIpEntities);
     }
 }
