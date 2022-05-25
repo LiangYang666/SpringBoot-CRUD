@@ -2,6 +2,7 @@ package com.liang.web.entity;
 
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.ToString;
 
@@ -11,6 +12,7 @@ import lombok.ToString;
  * @Date: 2022/5/25 下午2:58
  **/
 @Data
+@AllArgsConstructor
 @ToString
 @TableName("allowed_ip")
 public class IpEntity {

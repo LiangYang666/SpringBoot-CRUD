@@ -2,6 +2,7 @@ package com.liang.web.controller;
 
 import com.liang.web.entity.IpEntity;
 import com.liang.web.service.IpService;
+import com.liang.web.utils.IpUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -31,7 +33,12 @@ public class IpController {
     }
 
     @RequestMapping("/insertPage")
-    public String toInsertPage(){
+    public String toInsertPage(HttpServletRequest request, Model model){
+        String ip = IpUtil.getIp(request);
+        System.out.println(ip);
+        String ipAddress = IpUtil.getIpAddress(ip);
+        IpEntity ipEntity = new IpEntity(ip, ipAddress, null, null);
+        model.addAttribute("ip", ipEntity);
         return "insertPage";
     }
 
