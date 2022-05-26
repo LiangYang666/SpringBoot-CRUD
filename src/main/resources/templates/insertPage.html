@@ -8,7 +8,9 @@
 
 <body>
 
-<div style="width:800px;height:100%;margin-left:270px;">
+<!--头部-->
+<div th:replace="header :: header"></div>
+<div style="width:800px;height:100%;margin-left:270px;margin-top:80px;">
     <form action="/insert" method="post">
         ip：<input class="form-control" type="text" th:value="${ip.ip}" name="ip"><br>
         IP属地：<input class="form-control" type="text" th:value="${ip.address}" name="address"><br>

@@ -25,7 +25,7 @@ public class IpController {
     @Autowired
     private IpService ipService;
 
-    @GetMapping("/ipList")
+    @GetMapping({"/ipList", "/", "/index"})
     public String table(Model model) {
         List<IpEntity> ipEntities = ipService.getAllIp();
         model.addAttribute("ips", ipEntities);
